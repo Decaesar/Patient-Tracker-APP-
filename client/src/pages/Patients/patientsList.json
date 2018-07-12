@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "firstname": "Alex",
+      "lastname": "Messi",
+      "roomNumber": 303
+    },
+    {
+        "id": 2,
+        "firstname": "Chris",
+        "lastname": "Baker",
+        "roomNumber": 212
+      },
+      {
+        "id": 3,
+        "firstname": "David",
+        "lastname": "Seedorf",
+        "roomNumber": 222
+      }
+]
