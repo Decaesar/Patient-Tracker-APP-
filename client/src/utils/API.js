@@ -16,6 +16,6 @@ export default {
   },
   // Saves a book to the database
   savePatient: function(patientData) {
-    return axios.post("/api/paitent", patientData);
+    return axios.post("/api/patient", patientData);
   }
 };
