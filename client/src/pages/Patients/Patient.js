@@ -4,7 +4,7 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+// import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import patientsList from "./patientsList.json";
 
@@ -22,6 +22,8 @@ this.loadPatients();
 }
 
 loadPatients = () => {
+console.log('load patients called');
+console.log(this.state.patients.length + "is the length");
 API.getPatients()
 .then(res=> {
   this.setState({patients:res.data,firstname: "", lastname:"",roomNumber:""})
@@ -92,26 +94,25 @@ render() {
 
           </form>
         </Col>
+
         <Col size="md-6 sm-12">
           <Jumbotron>
             <h1>Patients List </h1>
+            <ul>
+
+            {this.state.patients.map(function(patient, idx) {
+              return( <li 
+                key={patient._id} >
+                <p> {patient.firstName} </p>
+                  {patient.lasttName}
+                </li>)
+            }
+           )}
+            
+            </ul>
+
           </Jumbotron>
-{this.state.patients.length > 0 ? (
-  <List>
-    {this.state.patients.map(patient => (
-      <ListItem key={patient._id}>
-        <Link to={"/patient/" + patient._id}>
-          <strong>
-            {patient.firstname}  {patient.lastname} 
-          </strong>
-        </Link>
-    
-      </ListItem>
-    ))}
-  </List>
-) : (
-  <h3>No Results to Display</h3>
-)}
+
         </Col>
       </Row>
     </Container>

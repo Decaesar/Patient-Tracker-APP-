@@ -16,7 +16,24 @@ const patientSeed = [
     firstname: "Ric",
     lastname: "King",
     roomNumber: 222
+  }, 
+  {
+    firstname: "patient 2 ",
+    lastname: "patient 2",
+    roomNumber: 111
+  }, 
+  {
+    firstname: "patient 3 ",
+    lastname: "patient 3",
+    roomNumber: 111
+  },
+  {
+    firstname: "patient 4 ",
+    lastname: "patient 4",
+    roomNumber: 111
   }
+
+
 ];
 
 db.Patient
